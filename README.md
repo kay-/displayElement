@@ -13,4 +13,4 @@ To make the element appear at a certain point of viewport
 
 `visibl.chk();`
 
-* check the 
+* check the position of viewport when window size is changed
