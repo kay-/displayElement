@@ -4,9 +4,9 @@
         <script src="visibl.js"></script>
         <script>
           window.onscroll = function() {
-            visibl.set("sample1", "opacity", -0.5, false);
-            visibl.set("sample2", "color", 0.5, false);
-            visibl.set("sample3", "rotate", 100, true);
+            visibl.set("sample1", "setOpacity", -0.5, false);
+            visibl.set("sample2", "setColor", 0.5, false);
+            visibl.set("sample3", "setRotation", 100, false);
           };
 
           window.onresize = function () {
@@ -48,7 +48,7 @@
 #sample1{
 
 
-    background: blue;
+    background: #000;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -95,16 +95,16 @@
 
 }
 
-.color {
+.setColor {
 
   background: green;
 }
 
-.rotate {
+.setRotation {
   transform: rotate(180deg);
 }
 
-.opacity {
+.setOpacity {
   opacity: 0.1;
 }
 
