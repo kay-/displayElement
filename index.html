@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="visibl.js"></script>
+        <script src="displayElem.js"></script>
         <script>
-          window.onscroll = function() {
-            visibl.set("sample1", "setOpacity", -0.5, false);
-            visibl.set("sample2", "setColor", 0.5, false);
-            visibl.set("sample3", "setRotation", 100, false);
-          };
 
-          window.onresize = function () {
-            visibl.chk();
-          };
+        window.addEventListener('scroll', set, false);
+        window.addEventListener('resize', chk, false);
+
+
+        function set() {
+          console.time('NAME1');
+          display.setOne("sample1", "setOpacity", -0.5, false);
+          display.setOne("sample2", "setColor", 0.5, false);
+          display.setOne("sample3", "setRotation", 100, false);
+          display.setMulti("sample2", "getTextColor", "setTextColor", 100, false);
+console.timeEnd('NAME1');
+        }
+
+        function chk() {
+          display.chk();
+        }
+
         </script>
     </head>
     <body>
@@ -33,7 +42,7 @@
             </div>
         </div>
         <div id="sample2" class="outer">
-            <div class="inner"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate voluptatem, repellat laborum esse atque, quis reprehenderit aut sequi illo dolorum quidem est veritatis eum pariatur. Dolores, praesentium, quis! Alias, nostrum!</p>
+            <div class="inner"><p><span class="getTextColor">Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit. Voluptate voluptatem, repellat laborum esse atque, quis reprehenderit <span class="getTextColor">aut</span> sequi illo dolorum quidem est veritatis eum pariatur. Dolores, praesentium, quis! Alias, nostrum!</p>
             </div>
         </div>
         <div id="sample3" class="outer">
@@ -106,6 +115,10 @@
 
 .setOpacity {
   opacity: 0.1;
+}
+
+.setTextColor {
+  color: white;
 }
 
 .inner p{
