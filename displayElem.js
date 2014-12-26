@@ -52,7 +52,6 @@
 			for (var i = 0; i < classElem1.length; i++) {
 				classElem1[i].classList.add(targetClass2);
 			}
-			//classElem1[0].classList.add(targetClass2);
 		} else {
 
 			if (!continuity) {
